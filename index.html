@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "author" content="Sydney Ellis"
+    <title> Bear Ninja Hunter Game </title>
+</head>
+<body>
+    <h1>Bear Ninja Hunter Game</h1>
+    <div>
+        <p id="demo"></p>
+    </div>
+    <script>
+        // Get the player's name
+        let uname = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started:');
+        // Say Hi to the player
+        let amessage = `Hi ${uname} Let\'s Play!!`;
+        alert(amessage);
+        // Let the player pick Bear, Ninja, or Hunter
+        let unameChoose = prompt ('Who are you: Bear, Ninja, or Hunter?');
+        // Make the computer pick Bear
+        const computerChoose = 'Bear';
+
+        // Put together results
+        let unameMessage = `${uname}, You picked ${unameChoose}!`;
+        
+        let computerMessage = `The computer picked ${computerChoose}!`;
+        // Show results in the console
+        console.log(unameMessage);
+        console.log(computerMessage);
+        // Show results on the page 
+        document.getElementById("demo").innerHTML = unameMessage + '<p>' + computerMessage + '</p>';
+        </script>
+
+</body>
+</html>
