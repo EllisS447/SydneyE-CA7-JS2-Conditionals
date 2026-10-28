@@ -10,7 +10,7 @@
 <body>
     <h1>Bear Ninja Hunter Game</h1>
     <div>
-        <p id="demo"></p>
+        <div id="demo"></div>
     </div>
     <script>
         // Get the player's name
@@ -23,6 +23,41 @@
         // Make the computer pick Bear
         const computerChoose = 'Bear';
 
+        // Check who wins the game
+        let winnerMessage = '';
+        
+        switch (computerChoose) {
+            case 'Bear':
+                if (unameChoose == 'Bear') {
+                    winnerMessage = "It's a tie!";
+                } else if (unameChoose == 'Ninja') {
+                    winnerMessage = 'The computer wins!';
+                } else {
+                    winnerMessage = `${uname} wins!`;
+                }
+                break;
+        
+            case 'Ninja':
+                if (unameChoose == 'Bear') {
+                    winnerMessage = `${uname} wins!`;
+                } else if (unameChoose == 'Ninja') {
+                    winnerMessage = "It's a tie!";
+                } else {
+                    winnerMessage = 'The computer wins!';
+                }
+                break;
+        
+            case 'Hunter':
+                if (unameChoose == 'Bear') {
+                    winnerMessage = 'The computer wins!';
+                } else if (unameChoose == 'Ninja') {
+                    winnerMessage = `${uname} wins!`;
+                } else {
+                    winnerMessage = "It's a tie!";
+                }
+                break;
+            }
+
         // Put together results
         let unameMessage = `${uname}, You picked ${unameChoose}!`;
         
@@ -30,8 +65,9 @@
         // Show results in the console
         console.log(unameMessage);
         console.log(computerMessage);
+        console.log(winnerMessage);
         // Show results on the page 
-        document.getElementById("demo").innerHTML = unameMessage + '<p>' + computerMessage + '</p>';
+        document.getElementById("demo").innerHTML = unameMessage + '<p>' + computerMessage + '</p><p>' + winnerMessage + '</p>';
         </script>
 
 </body>
